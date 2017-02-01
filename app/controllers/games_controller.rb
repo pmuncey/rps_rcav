@@ -1,41 +1,60 @@
 class GamesController < ApplicationController # class names in CamelCase
   def play_rock
-    @computer_move = ["rock", "paper", "scissors"].sample
-    if @computer_move == "rock"
-      @outcome = "tied"
-    elsif @computer_move == "scissors"
-      @outcome = "won"
-    elsif @computer_move == "paper"
-      @outcome = "lost"
+    @computer_move = ["Rock", "Paper", "Scissors"].sample
+    if @computer_move == "Rock"
+      @outcome = "Tied"
+      @image = "fa-hand-rock-o"
+      @label = "label-warning"
+    elsif @computer_move == "Scissors"
+      @outcome = "Won"
+      @image = "fa-hand-scissors-o"
+      @label = "label-success"
+    elsif @computer_move == "Paper"
+      @outcome = "Lost"
+      @image = "fa-hand-paper-o"
+      @label = "label-danger"
     end
 
     render("games/play_rock.html.erb") # "template file" erb = embedded ruby
   end
 
   def play_scissors
-    @computer_move = ["rock", "paper", "scissors"].sample
+    @computer_move = ["Rock", "Paper", "Scissors"].sample
 
-    if @computer_move == "rock"
-      @outcome = "lost"
-    elsif @computer_move == "scissors"
-      @outcome = "tied"
-    elsif @computer_move == "paper"
-      @outcome = "won"
+    if @computer_move == "Rock"
+      @outcome = "Lost"
+      @image = "fa-hand-rock-o"
+      @label = "label-danger"
+    elsif @computer_move == "Scissors"
+      @outcome = "Tied"
+      @image = "fa-hand-scissors-o"
+      @label = "label-warning"
+    elsif @computer_move == "Paper"
+      @outcome = "Won"
+      @image = "fa-hand-paper-o"
+      @label = "label-success"
+    end
 
     render("games/play_scissors.html.erb") # "template file" erb = embedded ruby
   end
 
   def play_paper
-    @computer_move = ["rock", "paper", "scissors"].sample
+    @computer_move = ["Rock", "Paper", "Scissors"].sample
 
-    if @computer_move == "rock"
-      @outcome = "won"
-    elsif @computer_move == "scissors"
-      @outcome = "lost"
-    elsif @computer_move == "paper"
-      @outcome = "tied"
+    if @computer_move == "Rock"
+      @outcome = "Won"
+      @image = "fa-hand-rock-o"
+      @label = "label-success"
+    elsif @computer_move == "Scissors"
+      @outcome = "Lost"
+      @image = "fa-hand-scissors-o"
+      @label = "label-danger"
+    elsif @computer_move == "Paper"
+      @outcome = "Tied"
+      @image = "fa-hand-paper-o"
+      @label = "label-warning"
+    end
 
     render("games/play_paper.html.erb") # "template file" erb = embedded ruby
   end
-
 end

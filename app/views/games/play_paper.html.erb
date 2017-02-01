@@ -1,14 +1,84 @@
-<h1>You played paper!</h1>
+<!DOCTYPE html>
+<html>
+<head>
+  <title>RockPaperScissors</title>
 
-<h1>
-  The computer played
+  <meta charset="utf-8">
 
-  <%= @computer_move %>
+  <!-- Connect to Bootstrap CSS -->
+  <link rel="stylesheet" href="assets/css/bootstrap.css">
 
-</h1>
+  <!-- Connect to Font Awesome CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 
-<h1> You <%= @outcome %>
+  <!-- Connect to BootstrapCDN -->
 
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
 
-<a href="/scissors">Play scissors</a>
-<a href="/rock">Play rock</a>
+  <style>
+    .move-icon {
+      font-size: 144px
+    }
+  </style>
+
+</head>
+
+<body>
+  <div class="container-fluid">
+    <hr>
+    <div class="row">
+      <div class="col-md-offset-2 col-md-8">
+        <div class="btn-group btn-group-justified">
+          <a href="/rock" class="btn btn-block btn-primary">
+            Play Rock
+          </a>
+          <a href="/paper" class="btn btn-block btn-info">
+            Play Paper
+          </a>
+          <a href="/scissors" class="btn btn-block btn-primary">
+            Play Scissors
+          </a>
+        </div>
+      </div>
+    </div>
+    <hr>
+    <div class="row">
+        <div class="col-md-offset-2 col-md-4">
+          <div class="panel panel-success">
+            <div class="panel-heading">
+              <h2 class="panel-title text-center">Paper</h2>
+          </div>
+          <div class="panel-body text-center">
+            <i class="fa fa-hand-paper-o move-icon"></i>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="panel panel-danger">
+          <div class="panel-heading">
+            <h2 class="panel-title text-center"><%= @computer_move %></h2>
+          </div>
+          <div class="panel-body text-center">
+          <i class="fa hand <%=@image%> move-icon"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+        <div class="col-md-offset-1 col-md-10">
+
+        </div>
+    </div>
+    <div class="row">
+      <div class="col-md-offset-1 col-md-10">
+      <div class="well text-center">
+        <h1>
+          <span class="label <%=@label%>">
+            <%= "You" + " " + @outcome %>
+          </span>
+        </h1>
+      </div>
+    </div>
+    </div>
+</div>
+</body>
